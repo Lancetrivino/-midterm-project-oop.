@@ -3,6 +3,13 @@
         "iostream": "cpp",
         "iomanip": "cpp",
         "ostream": "cpp",
-        "cstdint": "cpp"
+        "cstdint": "cpp",
+        "limits": "cpp",
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "system_error": "cpp"
     }
 }
