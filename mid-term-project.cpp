@@ -277,6 +277,24 @@ public:
     }
 };
 
+bool getValidChoice(int &choice) {
+
+    cout << "\nEnter your choice: ";
+    cin >> choice;
+
+    
+    if (cin.fail() || choice < 1) {
+        cin.clear();  
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');  
+        cout << "Invalid input! Please enter a positive number." << endl;
+        return false;
+    }
+    
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');  
+    return true; 
+    
+}
+
 
 int main() {
     Inventory inventory;
@@ -304,10 +322,13 @@ int main() {
         cout << "7. Sort Items\n";
         cout << "8. Display Low Stock Items\n";
         cout << "9. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
+        while (!getValidChoice(choice)) {
+           
+        }
 
-        switch (choice) {
+        
+
+       switch (choice) {
         case 1: {
             system("pause");
             system("cls");
@@ -443,11 +464,9 @@ int main() {
             cout << "Invalid choice! Please try again." << endl;
             system("pause");
             system("cls");
-    }
-
-
+        }
         
-        } while (choice != 9);
+    } while (choice != 9);
 
     return 0;
 }
